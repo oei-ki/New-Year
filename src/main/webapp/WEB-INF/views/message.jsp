@@ -12,12 +12,17 @@
 </head>
 <body>
 	<div id="content">
-		<h1>${name}님에게<br>
-		${num}개의 복주머니가 전달됐어요!
-		</h1>
-		<p>받은 복주머니는 1월 1일에 확인하실 수 있어요</p>
+		<h1>메시지를 남겨주세요</h1>
+		<form:form action="message" method="post" modelAttribute="guest" enctype="multipart/form-data"> <!--enctype 해당 폼이 multipart형식임을 알려준다 -->
+		<input type="text" placeholder="새해 덕담을 남겨주세요!">
+		<input type="text" placeholder="닉네임을 입력하세요(10자 이하)">
+		<form:input path="file" type="file" value="파일 추가" onClick="fn_addFile()"/><br>
+			  <div id="d_file">         
+		       </div>
+			<button type="submit">추가하기</button>
+		</form:form>
 		<div class="btn-box">
-			<button>링크 복사하기</button>
+			<button>복주머니 전달하기</button>
 		</div>
 	</div>
 </body>
